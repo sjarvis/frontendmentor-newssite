@@ -1,0 +1,52 @@
+:root {
+     --orange: hsl(35, 77%, 62%);
+     --red: hsl(5, 85%, 63%);
+     --offwhite: hsl(36, 100%, 99%);
+     --grayblue: hsl(233, 8%, 79%);
+     --dkgrayblue: hsl(236, 13%, 42%);
+     --dkblue: hsl(240, 100%, 5%);
+
+
+}
+
+* {
+     box-sizing: border-box;
+}
+
+
+body {
+     background-color: var(--offwhite);
+     font-family: 'Inter', sans-serif;
+     font-weight: 400;
+     color: var(--dkgrayblue);
+
+     min-height: 100dvh;
+     display: flex;
+     align-items: center;
+     justify-content: center;
+}
+
+
+nav {
+     display: flex;
+     justify-content: space-between;
+}
+
+nav ul {
+     display: flex;
+     justify-content: space-between;
+     align-items: center;
+
+}
+
+nav ul li {
+     list-style-type: none;
+     padding: 1rem;
+}
+
+
+
+.wrapper {
+     display: grid;
+     gap: 1em;
+}
