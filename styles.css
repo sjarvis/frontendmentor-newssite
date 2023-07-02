@@ -58,11 +58,11 @@ nav {
      z-index: 999;
      padding: 2em;
      height: 100dvh;
-     display: none;
+     /* display: none; */
 }
 
 .logo {
-     display: block;
+     display: none;
 }
 
 .nav-links {
@@ -81,6 +81,10 @@ nav {
 
 }
 
+
+.mobilemenubutton {
+     text-align: right;
+}
 
 
 
@@ -258,6 +262,10 @@ main .mobilefeaturepic>img {
           display: none;
      }
 
+     .mobilemenubutton {
+          display: none;
+     }
+
      nav {
           display: flex;
           justify-content: space-between;
@@ -266,7 +274,7 @@ main .mobilefeaturepic>img {
           position: relative;
           width: 100%;
           margin: 0;
-          padding: 3rem 0;
+          padding: 0;
           height: inherit;
      }
 
@@ -297,8 +305,6 @@ main .mobilefeaturepic>img {
           width: 175px;
           vertical-align: middle;
      }
-
-
 
 
 
@@ -387,5 +393,4 @@ main .mobilefeaturepic>img {
           width: 30%;
           margin-bottom: 0;
      }
-
 }
