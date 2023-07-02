@@ -108,6 +108,11 @@ main .mobilefeaturepic>img {
      margin-bottom: 2rem;
 }
 
+
+.feature .cutline .button {
+     cursor: pointer;
+}
+
 .feature .cutline .button a,
 .feature .cutline .button a:link,
 .feature .cutline .button a:visited {
@@ -123,6 +128,7 @@ main .mobilefeaturepic>img {
      text-transform: uppercase;
      letter-spacing: .3rem;
      margin-top: 1rem;
+
 }
 
 .feature .cutline .button a:hover,
@@ -310,6 +316,7 @@ main .mobilefeaturepic>img {
           gap: 1rem;
           grid-template-columns: 2fr 1fr;
           margin: 0;
+          max-width: 1440px;
      }
 
      /*  -- MAIN  featured ------------------------ */
@@ -338,7 +345,7 @@ main .mobilefeaturepic>img {
           width: 100%;
      }
 
-     .feature h2 {
+     .feature h1 {
           color: var(--dkblue);
           font-weight: 800;
           font-size: 3.6rem;
