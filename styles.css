@@ -5,14 +5,28 @@
      --grayblue: hsl(233, 8%, 79%);
      --dkgrayblue: hsl(236, 13%, 42%);
      --dkblue: hsl(240, 100%, 5%);
-
-
 }
 
-* {
+*,
+*::before,
+*::after {
      box-sizing: border-box;
+     margin: 0;
+     padding: 0;
 }
 
+a:link,
+a:visited {
+     color: var(--dkgrayblue);
+     text-decoration: none;
+}
+
+a:hover,
+a:active {
+     color: var(--orange);
+     text-decoration: none;
+     ;
+}
 
 body {
      background-color: var(--offwhite);
@@ -20,33 +34,351 @@ body {
      font-weight: 400;
      color: var(--dkgrayblue);
 
-     min-height: 100dvh;
-     display: flex;
-     align-items: center;
-     justify-content: center;
+
 }
+
+
+.mobileheader {
+     display: flex;
+     width: 100%;
+     justify-content: space-between;
+     align-items: center;
+}
+
+
+/*  -- NAVIGATION ------------------------ */
 
 
 nav {
-     display: flex;
-     justify-content: space-between;
+     background-color: var(--offwhite);
+     position: absolute;
+     top: 0;
+     right: 0;
+     width: 66.67%;
+     z-index: 999;
+     padding: 2em;
+     height: 100dvh;
+     display: none;
 }
 
-nav ul {
-     display: flex;
-     justify-content: space-between;
-     align-items: center;
-
+.logo {
+     display: block;
 }
 
-nav ul li {
+.nav-links {
+     display: block;
+}
+
+.navitem {
      list-style-type: none;
-     padding: 1rem;
+}
+
+.navitem a {
+     display: block;
+     margin-block: 2rem;
+     font-size: 1.6rem;
+     font-weight: 700;
+
 }
 
 
 
-.wrapper {
-     display: grid;
-     gap: 1em;
+
+
+
+/*  -- MAIN ------------------------ */
+
+main {
+     margin: 2rem;
+
+}
+
+
+main .featurepic {
+     display: none;
+}
+
+main .logopic {
+     display: block;
+     margin-block: 2rem;
+}
+
+main .mobilefeaturepic>img {
+     width: 100%;
+     margin-bottom: 2rem;
+}
+
+.feature .cutline .button a,
+.feature .cutline .button a:link,
+.feature .cutline .button a:visited {
+     background-color: var(--red);
+     border: none;
+     color: var(--offwhite);
+     padding: .8rem 2rem;
+     text-align: center;
+     text-decoration: none;
+     display: inline-block;
+     font-size: .9rem;
+     font-weight: 700;
+     text-transform: uppercase;
+     letter-spacing: .3rem;
+     margin-top: 1rem;
+}
+
+.feature .cutline .button a:hover,
+.feature .cutline .button a:active {
+     background-color: var(--dkblue);
+}
+
+.feature h2 {
+     color: var(--dkblue);
+     font-weight: 800;
+     font-size: 3rem;
+     line-height: 1;
+}
+
+.feature .cutline {
+     font-size: .9em;
+     line-height: 1.8;
+     margin-block: 1rem;
+}
+
+/*  -- MAIN  newstories ------------------------ */
+
+.newstories {
+     background-color: var(--dkblue);
+     padding: 2rem 1.5rem;
+     margin-top: 2rem;
+
+}
+
+.newstories h2 {
+     color: var(--orange);
+     font-size: 2.6rem;
+     font-weight: 700;
+     padding-bottom: 1rem;
+}
+
+.newstory h3 a,
+.newstory h3 a:link,
+.newstory h3 a:visited {
+     font-weight: 700;
+     color: var(--offwhite);
+     line-height: 2rem;
+     ;
+}
+
+.newstory h3 a:hover,
+.newstory h3 a:active {
+     color: var(--orange);
+}
+
+.newstory p {
+     font-size: 1rem;
+     color: var(--grayblue);
+     line-height: 1.8;
+     margin-bottom: 1.4rem;
+}
+
+.newstory p.bordered {
+     border-bottom: 1px solid var(--dkgrayblue);
+     padding-bottom: 1.4rem;
+     margin-bottom: 1.4rem;
+}
+
+
+/*  MAIN nextstory --------------------------------- */
+
+
+.nextlist {
+     margin-block: 2rem;
+}
+
+.nextlist .nextstory img {
+     float: left;
+     margin-right: 1.2rem;
+     width: 40%;
+     margin-bottom: 1rem;
+}
+
+.nextlist .nextstory {
+     padding: 0 1rem 0 0;
+     margin-block: 2rem;
+     clear: both;
+}
+
+.nextstory h2 {
+     color: var(--grayblue);
+     font-weight: 700;
+     font-size: 2.2rem;
+     padding-block: -1rem;
+}
+
+.nextstory h3 {
+     font-weight: 800;
+     font-size: 1.1rem;
+     color: var(--dkblue);
+     margin-block: .5rem;
+}
+
+.nextstory p {
+     font-size: .9rem;
+     line-height: 1.6;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@media (min-width: 1024px) {
+
+     body {
+          min-height: 100dvh;
+          display: flex;
+          justify-content: center;
+     }
+
+     .mobileheader {
+          display: none;
+     }
+
+     nav {
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          background-color: transparent;
+          position: relative;
+          width: 100%;
+          margin: 0;
+          padding: 3rem 0;
+          height: inherit;
+     }
+
+     .logo {
+          display: inline-block;
+     }
+
+     .nav-links {
+          list-style: none;
+          display: flex;
+     }
+
+     .navitem a {
+          display: inline-block;
+          padding: .5rem 1rem;
+          text-decoration: none;
+
+          margin-block: none;
+          font-size: 1rem;
+          font-weight: 400;
+     }
+
+     .navitem:hover a {
+          color: var(--orange);
+     }
+
+     .logo svg {
+          width: 175px;
+          vertical-align: middle;
+     }
+
+
+
+
+
+     .wrapper {
+          margin-inline: 2rem;
+          max-width: 60%;
+     }
+
+
+
+
+     /*  -- MAIN ------------------------ */
+     main {
+          display: grid;
+          gap: 1rem;
+          grid-template-columns: 2fr 1fr;
+          margin: 0;
+     }
+
+     /*  -- MAIN  featured ------------------------ */
+
+     .feature {
+          display: grid;
+          grid-template-columns: 1fr 1fr;
+          grid-template-rows: auto 1fr;
+          align-items: start;
+          row-gap: 1rem;
+     }
+
+     main .featurepic {
+          display: block;
+          width: 100%;
+          grid-column: span 2;
+     }
+
+     main .mobilefeaturepic,
+     main .logopic {
+          display: none;
+     }
+
+     .featurepic>img {
+          object-fit: cover;
+          width: 100%;
+     }
+
+     .feature h2 {
+          color: var(--dkblue);
+          font-weight: 800;
+          font-size: 3.6rem;
+          line-height: 1;
+          margin-top: 1rem;
+     }
+
+     .feature .cutline {
+          margin-left: 2rem;
+          font-size: .9em;
+          line-height: 1.8;
+     }
+
+     /*  -- MAIN  newstories ------------------------ */
+
+     .newstories {
+          margin-top: 0;
+          padding-bottom: 1rem;
+     }
+
+
+
+     /*  -- MAIN  nextlist ------------------------ */
+
+     main .nextlist {
+          grid-column: span 2;
+          margin-block: 0;
+     }
+
+     .nextlist {
+          display: grid;
+          grid-template-columns: 1fr 1fr 1fr;
+     }
+
+
+     .nextlist .nextstory img {
+          float: left;
+          margin-right: 1.2rem;
+          width: 30%;
+          margin-bottom: 0;
+     }
+
 }
