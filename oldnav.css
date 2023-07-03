@@ -1,0 +1,73 @@
+nav {
+     background-color: var(--offwhite);
+     position: absolute;
+     top: 0;
+     right: 0;
+     width: 66.67%;
+     z-index: 999;
+     padding: 2em;
+     height: 100dvh;
+     /* display: none; */
+}
+
+.logo {
+     display: none;
+}
+
+.nav-links {
+     display: block;
+}
+
+.navitem {
+     list-style-type: none;
+}
+
+.navitem a {
+     display: block;
+     margin-block: 2rem;
+     font-size: 1.6rem;
+     font-weight: 700;
+
+}
+
+
+
+/*  -- NAVIGATION ------------------------ */
+
+
+nav {
+     background-color: var(--offwhite);
+     position: absolute;
+     top: 0;
+     right: 0;
+     width: 66.67%;
+     z-index: 999;
+     padding: 2em;
+     height: 100dvh;
+     /* display: none; */
+}
+
+.logo {
+     display: none;
+}
+
+.nav-links {
+     display: block;
+}
+
+.navitem {
+     list-style-type: none;
+}
+
+.navitem a {
+     display: block;
+     margin-block: 2rem;
+     font-size: 1.6rem;
+     font-weight: 700;
+
+}
+
+
+.mobilemenubutton {
+     text-align: right;
+}

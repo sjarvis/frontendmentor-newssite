@@ -1,10 +1,24 @@
 :root {
+
+     /* colors */
      --orange: hsl(35, 77%, 62%);
      --red: hsl(5, 85%, 63%);
      --offwhite: hsl(36, 100%, 99%);
      --grayblue: hsl(233, 8%, 79%);
      --dkgrayblue: hsl(236, 13%, 42%);
      --dkblue: hsl(240, 100%, 5%);
+     --transdkblue: hsla(240, 100%, 5%, .1);
+
+
+     /* mobile menu */
+     --bar-width: 60px;
+     --bar-height: 4px;
+     --hamburger-gap: 6px;
+     --foreground: var(--dkblue);
+     --background: var(--offwhite);
+     --hamburger-margin: 1rem;
+     --animation-timing: 200ms ease-in-out;
+     --hamburger-height: calc(var(--bar-height) * 3 + var(--hamburger-gap) * 2);
 }
 
 *,
@@ -29,6 +43,7 @@ a:active {
 }
 
 body {
+     margin: 0;
      background-color: var(--offwhite);
      font-family: 'Inter', sans-serif;
      font-weight: 400;
@@ -38,57 +53,27 @@ body {
 }
 
 
-.mobileheader {
-     display: flex;
-     width: 100%;
-     justify-content: space-between;
-     align-items: center;
-}
 
 
 /*  -- NAVIGATION ------------------------ */
 
-
-nav {
-     background-color: var(--offwhite);
-     position: absolute;
-     top: 0;
-     right: 0;
-     width: 66.67%;
-     z-index: 999;
-     padding: 2em;
-     height: 100dvh;
-     /* display: none; */
-}
-
-.logo {
+.nav-links {
      display: none;
 }
 
-.nav-links {
-     display: block;
+.nav-links-mobile li {
+     list-style: none;
 }
 
-.navitem {
-     list-style-type: none;
-}
-
-.navitem a {
-     display: block;
-     margin-block: 2rem;
-     font-size: 1.6rem;
+.nav-links-mobile li {
+     font-size: 1.5rem;
+     padding-bottom: 1rem;
      font-weight: 700;
-
 }
 
-
-.mobilemenubutton {
-     text-align: right;
+.navbar {
+     margin: 1rem 2rem 2rem;
 }
-
-
-
-
 
 /*  -- MAIN ------------------------ */
 
@@ -239,16 +224,98 @@ main .mobilefeaturepic>img {
 
 
 
+/* ---------------------------------------------------------------*/
+/* -- HAMBURGER MENU for mobile nav ----------------------------- */
+/* ---------------------------------------------------------------*/
+
+.hamburger-menu {
+     --x-width: calc(var(--hamburger-height) * 1.41421356237);
+     display: flex;
+     flex-direction: column;
+     gap: var(--hamburger-gap);
+     width: max-content;
+     position: absolute;
+     top: var(--hamburger-margin);
+     right: var(--hamburger-margin);
+     z-index: 2;
+     cursor: pointer;
+}
+
+.hamburger-menu:has(input:checked) {
+     --background: white;
+     --foreground: #333;
+}
+
+.hamburger-menu:has(input:focus-visible)::before,
+.hamburger-menu:has(input:focus-visible)::after,
+.hamburger-menu input:focus-visible {
+     border: 1px solid var(--background);
+     box-shadow: 0 0 0 1px var(--foreground);
+}
+
+.hamburger-menu::before,
+.hamburger-menu::after,
+.hamburger-menu input {
+     content: "";
+     width: var(--bar-width);
+     height: var(--bar-height);
+     background-color: var(--foreground);
+     /* border-radius: 9999px; */
+     transform-origin: left center;
+     transition: opacity var(--animation-timing), width var(--animation-timing),
+          rotate var(--animation-timing), translate var(--animation-timing),
+          background-color var(--animation-timing);
+}
+
+.hamburger-menu input {
+     appearance: none;
+     padding: 0;
+     margin: 0;
+     outline: none;
+     pointer-events: none;
+}
+
+.hamburger-menu:has(input:checked)::before {
+     rotate: 45deg;
+     width: var(--x-width);
+     translate: 0 calc(var(--bar-height) / -2);
+}
+
+.hamburger-menu:has(input:checked)::after {
+     rotate: -45deg;
+     width: var(--x-width);
+     translate: 0 calc(var(--bar-height) / 2);
+}
+
+.hamburger-menu input:checked {
+     opacity: 0;
+     width: 0;
+}
+
+.hamburger-menu:has(input:checked)+.sidebar {
+     translate: 0;
+}
+
+.sidebar {
+     position: absolute;
+     top: 0;
+     right: 0;
+     transition: translate var(--animation-timing);
+     translate: 100%;
+     padding: 1rem 3rem;
+     padding-top: calc(var(--hamburger-height) + var(--hamburger-margin) + 1rem);
+     background-color: var(--background);
+     color: var(--foreground);
+     width: 15rem;
+     min-height: 100vh;
+
+}
 
 
 
 
 
-
-
-
-
-
+/* -- DESKTOP STYLES BELOW --------------------------------------- */
 
 @media (min-width: 1024px) {
 
@@ -266,6 +333,12 @@ main .mobilefeaturepic>img {
           display: none;
      }
 
+
+     .hamburger {
+          display: none;
+     }
+
+
      nav {
           display: flex;
           justify-content: space-between;
@@ -280,6 +353,11 @@ main .mobilefeaturepic>img {
 
      .logo {
           display: inline-block;
+     }
+
+     .navbar {
+          margin-left: 0;
+          margin: 2rem 0 1rem;
      }
 
      .nav-links {
